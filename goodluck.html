@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Good Luck! 🍀</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #d9f7be,
+                #c6e7ff
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.88);
+
+            padding: 45px;
+
+            border-radius: 30px;
+
+            max-width: 600px;
+
+            margin: 20px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.15);
+
+            animation: pop 1s ease;
+
+            z-index: 5;
+        }
+
+        .emoji {
+            font-size: 85px;
+
+            animation: bounce 1.5s infinite;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin: 15px 0;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .star {
+            position: absolute;
+
+            top: -30px;
+
+            font-size: 25px;
+
+            animation:
+                fall 4s linear infinite;
+
+            z-index: 1;
+        }
+
+        @keyframes pop {
+
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+        }
+
+        @keyframes bounce {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        @keyframes fall {
+
+            from {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 1;
+            }
+
+            to {
+                transform:
+                    translateY(110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="card">
+
+        <div class="emoji">
+            🍀
+        </div>
+
+        <h1>
+            Good Luck! 📚✨
+        </h1>
+
+        <p class="highlight">
+            You got this! 💚
+        </p>
+
+        <p>
+            Kaya mo 'yan sa exam!
+            Stay calm, breathe,
+            and trust what you've learned. 📝
+        </p>
+
+        <p>
+            Don't overthink.
+            Just do your best and
+            take it one question at a time. ✨
+        </p>
+
+        <p>
+            <strong>
+                I believe in you! 🍀💚
+            </strong>
+        </p>
+
+    </div>
+
+
+    <script>
+
+        function createStars() {
+
+            const emojis = [
+                "✨",
+                "⭐",
+                "🍀",
+                "💚"
+            ];
+
+            for (let i = 0; i < 30; i++) {
+
+                const star =
+                    document.createElement("div");
+
+                star.className = "star";
+
+                star.innerHTML =
+                    emojis[
+                        Math.floor(
+                            Math.random()
+                            * emojis.length
+                        )
+                    ];
+
+                star.style.left =
+                    Math.random() * 100 + "vw";
+
+                star.style.animationDuration =
+                    (3 + Math.random() * 4) + "s";
+
+                star.style.animationDelay =
+                    Math.random() * 4 + "s";
+
+                document.body.appendChild(star);
+
+            }
+
+        }
+
+        createStars();
+
+    </script>
+
+</body>
+
+</html>
